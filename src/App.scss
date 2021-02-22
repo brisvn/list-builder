@@ -1,0 +1,12 @@
+.sidebar{
+  float:left;
+  height: 100vh;
+}
+
+.App{
+  margin-left: 30px;
+}
+$sidebar-width: 180px;
+
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
