@@ -21,8 +21,8 @@ export default function Sidebar() {
                         <Link to="/page-1"/></MenuItem>
                     </Menu>
                 </ProSidebar>
-
         </div>
+
     );
 }
 

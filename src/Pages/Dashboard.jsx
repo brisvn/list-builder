@@ -8,6 +8,14 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import PropTypes from 'prop-types';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,8 +49,54 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+function renderList(props, Array) {
+    const {index,style} = props;
+
+    return(
+      <ListItem style = {style} key = {index}>
+          <ListItemText primary={''}></ListItemText>
+      </ListItem>
+    );
+}
+
 export default function Dashboard() {
     const classes = useStyles();
+    const [abilityOpen, setAbilityOpen] = React.useState(false);
+    const [factionOpen, setFactionOpen] = React.useState(false);
+    const [keywordOpen, setKeywordOpen] = React.useState(false);
+    const [abilityName, setAbilityName] = React.useState("");
+    const [abilityCount,setAbilityCount] = React.useState(0);
+    const [abilities] = React.useState([]);
+
+
+    const handleClickFactionOpen = () => {
+        setFactionOpen(true);
+    };
+
+    const handleFactionClose = () => {
+        setFactionOpen(false);
+    };
+    const handleClickAbilityOpen = () => {
+        setAbilityOpen(true);
+    };
+
+    const handleAbilityClose = () => {
+
+        setAbilityOpen(false);
+    };
+
+    const handleClickKeywordOpen = () => {
+        setKeywordOpen(true);
+    };
+
+    const handleKeywordClose = () => {
+        setKeywordOpen(false);
+    };
+
+    const handleAbilityName = e => {
+        setAbilityName(e.target.value);
+        abilities.push(abilityName)
+    };
     return (
         <div className="App">
             <h1>New Datasheet</h1>
@@ -72,7 +126,7 @@ export default function Dashboard() {
                                     </Grid>
                                     <Grid item>
                                         <Button variant="contained" color="primary" href="#outlined-buttons"
-                                                onClick={() => {  }}>Cancel</Button>
+                                                onClick={() => {  window.location.reload(false) }}>Cancel</Button>
                                     </Grid>
                                 </Grid>
                             </Paper>
@@ -174,15 +228,99 @@ export default function Dashboard() {
                                     </Grid>
                                     <Grid item>
                                         <h3>Abilities</h3>
+                                        <Button variant="contained" color="primary" href="#outlined-buttons"
+                                                onClick={handleClickAbilityOpen}>Add Ability</Button>
+                                        <Dialog open={abilityOpen} onClose={handleAbilityClose} aria-labelledby="form-dialog-title">
+                                            <DialogTitle id="form-dialog-title">Add Ability</DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText>
+                                                    To add an ability to this datasheet fill out this form
+                                                </DialogContentText>
+                                                <TextField
+                                                    autoFocus
+                                                    margin="dense"
+                                                    id="name"
+                                                    label="Ability Name"
+                                                    value = {abilityName}
+                                                    onChange={handleAbilityName}
+                                                    fullWidth
+                                                />
+                                                <TextField
+                                                    autoFocus
+                                                    margin="dense"
+                                                    id="name"
+                                                    label="Ability Text"
+                                                    fullWidth
+                                                />
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button onClick={handleAbilityClose} color="primary" >
+                                                    Add
+                                                </Button>
+                                                <Button onClick={handleAbilityClose} color="primary">
+                                                    Cancel
+                                                </Button>
+                                            </DialogActions>
+                                        </Dialog>
                                     </Grid>
-                                    <Grid item>
+                                    <Grid item xs ={1}>
                                         <h3>Keywords</h3>
-                                    </Grid>
-                                    <Grid item>
                                         <p>Faction Keywords</p>
+                                        <Button variant="contained" color="primary" href="#outlined-buttons"
+                                                onClick={ handleClickFactionOpen } style={{minWidth:"210px"}}>
+                                            Add Faction Keyword
+                                        </Button>
+                                        <Dialog open={factionOpen} onClose={handleFactionClose} aria-labelledby="form-dialog-title">
+                                            <DialogTitle id="form-dialog-title">Add Faction Keyword</DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText>
+                                                    To add a faction keyword to this datasheet fill out this form
+                                                </DialogContentText>
+                                                <TextField
+                                                    autoFocus
+                                                    margin="dense"
+                                                    id="name"
+                                                    label="Faction Keyword"
+                                                    fullWidth
+                                                />
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button onClick={handleFactionClose} color="primary">
+                                                    Add
+                                                </Button>
+                                                <Button onClick={handleFactionClose} color="primary">
+                                                    Cancel
+                                                </Button>
+                                            </DialogActions>
+                                        </Dialog>
                                     </Grid>
                                     <Grid item>
                                         <p>Keywords</p>
+                                        <Button variant="contained" color="primary" href="#outlined-buttons"
+                                                onClick={ handleClickKeywordOpen }>Add Keyword</Button>
+                                        <Dialog open={keywordOpen} onClose={handleKeywordClose} aria-labelledby="form-dialog-title">
+                                            <DialogTitle id="form-dialog-title">Add Ability</DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText>
+                                                    To add a faction keyword to this datasheet fill out this form
+                                                </DialogContentText>
+                                                <TextField
+                                                    autoFocus
+                                                    margin="dense"
+                                                    id="name"
+                                                    label="Keyword"
+                                                    fullWidth
+                                                />
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button onClick={handleKeywordClose} color="primary">
+                                                    Add
+                                                </Button>
+                                                <Button onClick={handleKeywordClose} color="primary">
+                                                    Cancel
+                                                </Button>
+                                            </DialogActions>
+                                        </Dialog>
                                     </Grid>
                                 </Grid>
                             </Paper>
