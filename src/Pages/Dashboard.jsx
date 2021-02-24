@@ -16,6 +16,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import PropTypes from 'prop-types';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,15 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function renderList(props, Array) {
-    const {index,style} = props;
 
-    return(
-      <ListItem style = {style} key = {index}>
-          <ListItemText primary={''}></ListItemText>
-      </ListItem>
-    );
-}
 
 export default function Dashboard() {
     const classes = useStyles();
@@ -65,9 +62,16 @@ export default function Dashboard() {
     const [factionOpen, setFactionOpen] = React.useState(false);
     const [keywordOpen, setKeywordOpen] = React.useState(false);
     const [abilityName, setAbilityName] = React.useState("");
-    const [abilityCount,setAbilityCount] = React.useState(0);
+    const [abilityText, setAbilityText] = React.useState("");
+    const [abilityNames] = React.useState([]);
+    const [abilityTexts] = React.useState([]);
     const [abilities] = React.useState([]);
 
+
+    function Ability(name,text){
+        this.name = "";
+        this.text = "";
+    };
 
     const handleClickFactionOpen = () => {
         setFactionOpen(true);
@@ -81,7 +85,8 @@ export default function Dashboard() {
     };
 
     const handleAbilityClose = () => {
-
+        setAbilityText("");
+        setAbilityName("");
         setAbilityOpen(false);
     };
 
@@ -95,8 +100,38 @@ export default function Dashboard() {
 
     const handleAbilityName = e => {
         setAbilityName(e.target.value);
-        abilities.push(abilityName)
     };
+
+    const handleAbilityText = e =>{
+      setAbilityText(e.target.value);
+    };
+
+
+    const handleAbilityCloseAdd = () => {
+        if(!abilityName || !abilityText) {
+            console.log("empty")
+        } else{
+            abilityTexts.push(abilityText);
+            abilityNames.push(abilityName);
+            let i = 0;
+            for (i in abilityTexts){
+                let x = new Ability();
+                x.name = abilityNames[i];
+                x.text = abilityTexts[i];
+                abilities.push(x);
+            }
+            let j = 0;
+            for (j in abilities){
+                console.log(abilities[j].name);
+                console.log(abilities[j].text);
+            }
+        }
+        setAbilityText("");
+        setAbilityName("");
+        setAbilityOpen(false);
+    };
+
+
     return (
         <div className="App">
             <h1>New Datasheet</h1>
@@ -148,16 +183,16 @@ export default function Dashboard() {
                                         <h3>Characteristics</h3>
                                         <Grid container direction={"row"} spacing={1}>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "No." variant="filled"
+                                                <TextField id="No." label= "No." variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "M" variant="filled"
+                                                <TextField id="M" label= "M" variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
                                                 <FormControl variant="filled" className={classes.formControl}>
-                                                    <InputLabel id="demo-simple-select-filled-label">WS</InputLabel>
+                                                    <InputLabel id="WS">WS</InputLabel>
                                                     <Select
                                                         labelId="demo-simple-select-filled-label"
                                                         id="demo-simple-select-filled"
@@ -173,7 +208,7 @@ export default function Dashboard() {
                                             </Grid>
                                             <Grid item>
                                                 <FormControl variant="filled" className={classes.formControl}>
-                                                    <InputLabel id="demo-simple-select-filled-label">BS</InputLabel>
+                                                    <InputLabel id="BS">BS</InputLabel>
                                                     <Select
                                                         labelId="demo-simple-select-filled-label"
                                                         id="demo-simple-select-filled"
@@ -188,28 +223,28 @@ export default function Dashboard() {
                                                 </FormControl>
                                             </Grid>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "S" variant="filled"
+                                                <TextField id="S" label= "S" variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "T" variant="filled"
+                                                <TextField id="T" label= "T" variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "W" variant="filled"
+                                                <TextField id="W" label= "W" variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "A" variant="filled"
+                                                <TextField id="A" label= "A" variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
-                                                <TextField id="outlined-basic" label= "Ld" variant="filled"
+                                                <TextField id="Ld" label= "Ld" variant="filled"
                                                            style={{maxWidth:'100px'}}  />
                                             </Grid>
                                             <Grid item>
                                                 <FormControl variant="filled" className={classes.formControl}>
-                                                    <InputLabel id="demo-simple-select-filled-label">Sv</InputLabel>
+                                                    <InputLabel id="Sv">Sv</InputLabel>
                                                     <Select
                                                         labelId="demo-simple-select-filled-label"
                                                         id="demo-simple-select-filled"
@@ -221,6 +256,9 @@ export default function Dashboard() {
                                                         <MenuItem value={"6+"}>6+</MenuItem>
                                                         <MenuItem value={"7+"}>7+</MenuItem>
                                                         <MenuItem value={"-"}>-</MenuItem>
+                                                        <MenuItem value="">
+                                                            <em>None</em>
+                                                        </MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </Grid>
@@ -237,6 +275,7 @@ export default function Dashboard() {
                                                     To add an ability to this datasheet fill out this form
                                                 </DialogContentText>
                                                 <TextField
+                                                    required
                                                     autoFocus
                                                     margin="dense"
                                                     id="name"
@@ -246,15 +285,18 @@ export default function Dashboard() {
                                                     fullWidth
                                                 />
                                                 <TextField
+                                                    required
                                                     autoFocus
                                                     margin="dense"
-                                                    id="name"
+                                                    id="text"
                                                     label="Ability Text"
+                                                    value={abilityText}
+                                                    onChange={handleAbilityText}
                                                     fullWidth
                                                 />
                                             </DialogContent>
                                             <DialogActions>
-                                                <Button onClick={handleAbilityClose} color="primary" >
+                                                <Button onClick={handleAbilityCloseAdd} color="primary" >
                                                     Add
                                                 </Button>
                                                 <Button onClick={handleAbilityClose} color="primary">
@@ -262,6 +304,9 @@ export default function Dashboard() {
                                                 </Button>
                                             </DialogActions>
                                         </Dialog>
+                                    </Grid>
+                                    <Grid item>
+
                                     </Grid>
                                     <Grid item xs ={1}>
                                         <h3>Keywords</h3>
