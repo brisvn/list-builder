@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6aa0f4fe-77b3-49c8-8dca-5e7568f223c1" name="Default Changelist" comment="">
+    <list default="true" id="6aa0f4fe-77b3-49c8-8dca-5e7568f223c1" name="Default Changelist" comment="Worked on some visual improvements and added loadout options to the form">
+      <change afterPath="$PROJECT_DIR$/src/model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Page-1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Page-1.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +90,7 @@
       <workItem from="1614023041350" duration="1320000" />
       <workItem from="1614024458675" duration="3000" />
       <workItem from="1614025414454" duration="30552000" />
+      <workItem from="1614398702625" duration="3184000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on add datasheet page">
       <created>1614033780377</created>
@@ -116,7 +116,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Worked on add datasheet page" />
     <MESSAGE value="Finished most of the form and worked on functionality of textboxes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished most of the form and worked on functionality of textboxes." />
+    <MESSAGE value="Worked on some visual improvements and added loadout options to the form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on some visual improvements and added loadout options to the form" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#ESLint" timestamp="1614185561926">
@@ -131,10 +132,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="679" y="218" key="#npm_start/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1613722195176" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1614057035992">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1614401860523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614057035992" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401860522" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1614033830796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -143,22 +144,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="830" y="413" key="Github.ShareDialog/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614033847667" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614186515597">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614401833239">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614186515597" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614186515597">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614401833239">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614186515597" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614186515596">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614401833239">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614186515596" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614186515597">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614401833239">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614186515597" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1614024362069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -211,10 +212,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="230" key="RollbackChangesDialog/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614026762418" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614057042261">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614187684041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614057042261" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614187684041" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614056501721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

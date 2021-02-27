@@ -13,14 +13,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -61,6 +54,7 @@ export default function Dashboard() {
     const [abilityOpen, setAbilityOpen] = React.useState(false);
     const [factionOpen, setFactionOpen] = React.useState(false);
     const [keywordOpen, setKeywordOpen] = React.useState(false);
+    const [loadoutOpen, setLoadoutOpen] = React.useState(false);
     const [abilityName, setAbilityName] = React.useState("");
     const [abilityText, setAbilityText] = React.useState("");
     const [abilityNames] = React.useState([]);
@@ -71,7 +65,7 @@ export default function Dashboard() {
     function Ability(name,text){
         this.name = "";
         this.text = "";
-    };
+    }
 
     const handleClickFactionOpen = () => {
         setFactionOpen(true);
@@ -103,9 +97,8 @@ export default function Dashboard() {
     };
 
     const handleAbilityText = e =>{
-      setAbilityText(e.target.value);
+        setAbilityText(e.target.value);
     };
-
 
     const handleAbilityCloseAdd = () => {
         if(!abilityName || !abilityText) {
@@ -129,6 +122,13 @@ export default function Dashboard() {
         setAbilityText("");
         setAbilityName("");
         setAbilityOpen(false);
+    };
+
+    const handleLoadoutOpen = () =>{
+        setLoadoutOpen(true);
+    };
+    const handleLoadoutClose = () =>{
+        setLoadoutOpen(false);
     };
 
 
@@ -169,14 +169,43 @@ export default function Dashboard() {
                         <Grid item>
                             <Paper className={classes.paper2}>
                                 <Grid container direction="column" spacing={1}>
-                                    <Grid item>
+                                    <Grid item xs>
                                         <h2>Enter the information for your unit here</h2>
                                     </Grid>
-                                    <Grid container direction="row" spacing={1}>
-                                        <Grid item>
+                                    <Grid
+                                        container
+                                        direction="row"
+                                        justify="flex-start"
+                                        alignItems="flex-start"
+                                        spacing={1}
+                                    >
+                                        <Grid item xs={3}>
                                             <h3>Name</h3>
-                                            <TextField id="unit-name" style={{maxWidth:'100vw'}} variant="outlined"
-                                                       size="small"/>
+                                            <TextField id="unit-name" style={{minWidth:'407px'}} variant="outlined"
+                                                       size="normal"/>
+                                        </Grid>
+                                        <Grid item xs spacing={0}>
+                                            <h3>Battlefield Role</h3>
+                                            <FormControl variant="filled" className={classes.formControl}>
+                                                <InputLabel
+                                                    id="battlefield-role-select"
+                                                    style={{minWidth:"300px"}}
+                                                >
+                                                    Battlefield Role
+                                                </InputLabel>
+                                                <Select
+                                                    id="battlefield-role"
+                                                    style={{minWidth:"150px"}}
+                                                >
+                                                    <MenuItem value={"HQ"}>HQ</MenuItem>
+                                                    <MenuItem value={"Troops"}>Troops</MenuItem>
+                                                    <MenuItem value={"Elites"}>Elites</MenuItem>
+                                                    <MenuItem value={"Fast Attack"}>Fast Attack</MenuItem>
+                                                    <MenuItem value={"Heavy Support"}>Heavy Support</MenuItem>
+                                                    <MenuItem value={"Flyer"}>Flyer</MenuItem>
+                                                    <MenuItem value={"Dedicated Transport"}>Dedicated Transport</MenuItem>
+                                                </Select>
+                                            </FormControl>
                                         </Grid>
                                     </Grid>
                                     <Grid item>
@@ -366,6 +395,61 @@ export default function Dashboard() {
                                                 </Button>
                                             </DialogActions>
                                         </Dialog>
+                                        <Grid item>
+                                            <h3>Loadout Options</h3>
+                                            {/* This is the most complicated part need to think on it some,
+                                             will probably need to implement the AWS database to make it
+                                             work correctly*/}
+                                            <Button variant="contained" color="primary" href="#outlined-buttons"
+                                                    onClick={ handleLoadoutOpen }>Add Option</Button>
+                                            <Dialog open={loadoutOpen} onClose={handleLoadoutClose} aria-labelledby="form-dialog-title">
+                                                <DialogTitle id="form-dialog-title">Add Option</DialogTitle>
+                                                <DialogContent>
+                                                    <DialogContentText>
+                                                        To add a loadout option fill out this form
+                                                    </DialogContentText>
+                                                    <TextField
+                                                        autoFocus
+                                                        margin="dense"
+                                                        id="Option-name"
+                                                        label="Name"
+                                                        fullWidth
+                                                    />
+                                                    <FormControl
+                                                        variant="filled"
+                                                        className={classes.formControl}
+                                                        fullWidth
+                                                    >
+                                                        <InputLabel id="type">Option Type</InputLabel>
+                                                        <Select
+                                                            labelId="demo-simple-select-filled-label"
+                                                            id="Option Type"
+                                                        >
+                                                            <MenuItem value={"Melee Weapon"}>Melee Weapon</MenuItem>
+                                                            <MenuItem value={"Shooting Weapon"}>
+                                                                Shooting Weapon
+                                                            </MenuItem>
+                                                            <MenuItem value={"Other"}>Other</MenuItem>
+                                                            <MenuItem value="">
+                                                                <em>None</em>
+                                                            </MenuItem>
+                                                        </Select>
+                                                    </FormControl>
+                                                    <p>Limits</p>
+                                                    <Button variant="contained" color="primary">
+                                                        Add Limit
+                                                    </Button>
+                                                </DialogContent>
+                                                <DialogActions>
+                                                    <Button onClick={handleLoadoutClose} color="primary">
+                                                        Add
+                                                    </Button>
+                                                    <Button onClick={handleLoadoutClose} color="primary">
+                                                        Cancel
+                                                    </Button>
+                                                </DialogActions>
+                                            </Dialog>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Paper>
