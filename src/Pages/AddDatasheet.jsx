@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         background: '#B8E9FB',
         width: '100vw',
-        maxWidth: '1650px'
+        maxWidth: '1630px'
     },
     outerColumn: {
         height: 100
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         background: '#D4D4D4',
         width: '100vw',
-        maxWidth: '1650px'
+        maxWidth: '1630px'
     },
     formControl: {
         margin: theme.spacing(0),
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Dashboard() {
+export default function AddDatasheet() {
     const classes = useStyles();
     const [abilityOpen, setAbilityOpen] = React.useState(false);
     const [factionOpen, setFactionOpen] = React.useState(false);

@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aa0f4fe-77b3-49c8-8dca-5e7568f223c1" name="Default Changelist" comment="Worked on some visual improvements and added loadout options to the form">
-      <change afterPath="$PROJECT_DIR$/src/model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/AddDatasheet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kcmcq.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kcmcq.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Dashboard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Page-2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Page-2.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +98,8 @@
       <workItem from="1614023041350" duration="1320000" />
       <workItem from="1614024458675" duration="3000" />
       <workItem from="1614025414454" duration="30552000" />
-      <workItem from="1614398702625" duration="3184000" />
+      <workItem from="1614398702625" duration="4003000" />
+      <workItem from="1614402841400" duration="226000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on add datasheet page">
       <created>1614033780377</created>
@@ -106,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614057036533</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Worked on some visual improvements and added loadout options to the form">
+      <created>1614401901597</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614401901597</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,42 +140,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#ESLint/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614185561926" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613726248455">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614402015690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1613726248455" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402015690" />
     <state x="679" y="218" key="#npm_start" timestamp="1613722195176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="679" y="218" key="#npm_start/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1613722195176" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1614401860523">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1614402602508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401860522" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1614033830796">
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402602508" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1614402706593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614033830796" />
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402706593" />
     <state x="830" y="413" key="Github.ShareDialog" timestamp="1614033847667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="830" y="413" key="Github.ShareDialog/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614033847667" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614401833239">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614402711082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614401833239">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402711082" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614402711082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614401833239">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402711082" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614402711082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614401833239">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402711082" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614402711082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401833239" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614402711082" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1614024362069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -212,10 +228,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="230" key="RollbackChangesDialog/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614026762418" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614187684041">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614401909568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614187684041" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-425.1920.1040@0.0.1920.1040" timestamp="1614401909568" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614056501721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
